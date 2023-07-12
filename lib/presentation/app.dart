@@ -20,9 +20,12 @@ class MyApp extends StatelessWidget {
         LogScreen.routeName: (_) => const LogScreen(),
         HomeScreen.routeName: (_) => const HomeScreen(),
         VoteScreen.routeName: (_) => const VoteScreen(),
+<<<<<<< HEAD
         IntegrantScreen.routeName: (_) => const IntegrantScreen(),
         MenuApp.routeName: (_) => const MenuApp(),
         ResultScreen.routeName: (_) => const ResultScreen(),
+=======
+>>>>>>> b520111b2ef9c49485496d6af7680ccacca88718
       },
     );
   }

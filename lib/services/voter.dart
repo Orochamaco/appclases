@@ -1,6 +1,9 @@
 import 'dart:core';
 import 'dart:convert';
 import 'package:appclases/presentation/screens/authorization.dart';
+import 'package:dio/dio.dart';
+import 'package:appclases/providers/jwt_provider.dart';
+import 'package:provider/provider.dart';
 import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 
@@ -18,21 +21,25 @@ class VoterService {
       'X-API-TOKEN': _apiTkn,
       'X-API-KEY': _apiKey
     };
-
-    final response = await http.get(url, headers: headers);
-    if (response.statusCode >= 200 && response.statusCode < 300) {
-      final responseJson = json.decode(response.body);
-      final String redirect = responseJson['redirectUrl'];
-      final String token = responseJson['token'];
-      if (redirect.isNotEmpty) {
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) =>
-                AuthorizationScreen(url: redirect, token: token),
-          ),
-        );
+  final jwtProvider = Provider.of<JwtProvider>(context, listen: false);
+    try {
+      Response response = await Dio().get(url.toString(), options: Options(headers: headers));
+      if (response.statusCode != null && response.statusCode! >= 200 && response.statusCode! < 300) {
+        final responseJson = response.data;
+        final String redirect = responseJson['redirectUrl'];
+        final String token = responseJson['token'];
+        if (redirect.isNotEmpty) {
+          await jwtProvider.getAndSetJwt(token);
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => AuthorizationScreen(url: redirect, token: token, jwtProvider: jwtProvider,),
+            ),
+          );
+        }
       }
+    } catch (error) {
+      print('Error: $error');
     }
 
     return true;
@@ -47,13 +54,17 @@ class VoterService {
       'X-API-KEY': _apiKey
     };
 
-    String jwt = "";
-    final response = await http.post(url, headers: headers);
-    if (response.statusCode >= 200 && response.statusCode < 300) {
-      var responseJson = json.decode(response.body);
-      jwt = responseJson['jwt'];
+    try {
+      Response response = await Dio().post(url.toString(), options: Options(headers: headers));
+      if (response.statusCode != null && response.statusCode! >= 200 && response.statusCode! < 300) {
+        var responseJson = response.data;
+        String jwt = responseJson['jwt'];
+        return jwt;
+      }
+    } catch (error) {
+      print('Error: $error');
     }
 
-    return jwt;
+    return "";
   }
 }
