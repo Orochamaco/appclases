@@ -42,7 +42,8 @@ class _VoteScreenState extends State<VoteScreen> {
           children: [
             Container(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 148, 173, 137),
+                //color: Color.fromARGB(255, 148, 173, 137),
+                color: Colors.white,
               ),
             ),
             SizedBox(height: 50.0),
@@ -65,7 +66,7 @@ class _VoteScreenState extends State<VoteScreen> {
                       width: 100.0,
                       height: 50.0,
                       decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: Colors.lightGreen,
                         border: Border.all(color: Colors.black),
                         borderRadius: BorderRadius.circular(5.0),
                       ),
@@ -92,7 +93,7 @@ class _VoteScreenState extends State<VoteScreen> {
                       width: 100.0,
                       padding: EdgeInsets.all(10.0),
                       decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: Colors.lightGreen,
                         borderRadius: BorderRadius.circular(5.0),
                       ),
                       child: Center(

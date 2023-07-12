@@ -1,5 +1,5 @@
 //import 'package:appclases/services/voter.dart';
-import 'package:flutter/material.dart';
+/*import 'package:flutter/material.dart';
 import 'dart:core';
 import 'dart:convert';
 import 'package:dio/dio.dart';
@@ -51,4 +51,4 @@ class JwtProvider with ChangeNotifier {
    Future<void> getAndSetJwt(String token) async {
     await accJwt(token);
   }
-}
+}*/

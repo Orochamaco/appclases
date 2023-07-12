@@ -18,14 +18,12 @@ class MyApp extends StatelessWidget {
       routes: {
         MyHomePage.routeName: (_) => const MyHomePage(title: 'hola',),
         LogScreen.routeName: (_) => const LogScreen(),
-        HomeScreen.routeName: (_) => const HomeScreen(),
+        HomeScreen.routeName: (_) =>  HomeScreen(),
         VoteScreen.routeName: (_) => const VoteScreen(),
-<<<<<<< HEAD
         IntegrantScreen.routeName: (_) => const IntegrantScreen(),
         MenuApp.routeName: (_) => const MenuApp(),
         ResultScreen.routeName: (_) => const ResultScreen(),
-=======
->>>>>>> b520111b2ef9c49485496d6af7680ccacca88718
+
       },
     );
   }
@@ -53,6 +51,6 @@ class _MyHomePageState extends State<MyHomePage> {
 
   @override
   Widget build(BuildContext context) {
-    return _isAuthenticated ? const HomeScreen() : const LogScreen();
+    return _isAuthenticated ?  HomeScreen() : const LogScreen();
   }
 }

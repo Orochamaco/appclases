@@ -29,6 +29,7 @@ class MenuApp extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.logout),
             title: Text('LogOut'),
+            onTap: () => Navigator.pushNamed(context, VoteScreen.routeName),
         
           ),
         ],

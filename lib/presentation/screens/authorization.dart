@@ -8,18 +8,14 @@ import 'package:provider/provider.dart';
 //import 'dart:convert';
 
 class AuthorizationScreen extends StatelessWidget {
-  static String routeName = 'authorization';
   final String url;
   final String token;
-  final JwtProvider jwtProvider;
-  
 
-  const AuthorizationScreen({Key? key, required this.url, required this.token, required this.jwtProvider})
+  const AuthorizationScreen({Key? key, required this.url, required this.token})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-     final jwtProvider = Provider.of<JwtProvider>(context, listen: false);
     return Scaffold(
         body: WebView(
       initialUrl: url,
@@ -30,24 +26,23 @@ class AuthorizationScreen extends StatelessWidget {
         CookieManager().clearCookies();
       },
       navigationDelegate: (delegate) {
-          final Uri responseUri = Uri.parse(delegate.url);
-          final String path = responseUri.path;
-          final bool ok = path.endsWith('/' + token + '/exists');
-          if (ok) {
-            VoterService.getJwt(token).then((jwt) {
-              jwtProvider.setJwt(jwt);
-              Navigator.pop(context);
-              Navigator.pushReplacement(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => ok ? const HomeScreen() : const LogScreen(),
-                ),
-              );
-            });
-          }
+        final Uri responseUri = Uri.parse(delegate.url);
+        final String path = responseUri.path;
+        final bool ok = path.endsWith('/' + token + '/exists');
+        if (ok) {
+          VoterService.getJwt(token).then((value) => print(value));
 
-          return NavigationDecision.navigate;
-        },
+          Navigator.pop(context);
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+                builder: (context) =>
+                    ok ?  HomeScreen() : const LogScreen()),
+          );
+        }
+
+        return NavigationDecision.navigate;
+      },
     ));
   }
 }
