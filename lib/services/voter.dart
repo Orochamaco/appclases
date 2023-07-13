@@ -1,10 +1,10 @@
 import 'dart:core';
-import 'dart:convert';
+//import 'dart:convert';
 import 'package:appclases/presentation/screens/authorization.dart';
 import 'package:dio/dio.dart';
-import 'package:appclases/providers/jwt_provider.dart';
-import 'package:provider/provider.dart';
-import 'package:http/http.dart' as http;
+//import 'package:appclases/providers/jwt_provider.dart';
+//import 'package:provider/provider.dart';
+//import 'package:http/http.dart' as http;
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 

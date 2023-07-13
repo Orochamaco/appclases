@@ -3,8 +3,8 @@ import 'package:appclases/presentation/screens/log.dart';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:appclases/services/voter.dart';
-import 'package:appclases/providers/jwt_provider.dart';
-import 'package:provider/provider.dart';
+//import 'package:appclases/providers/jwt_provider.dart';
+//import 'package:provider/provider.dart';
 //import 'dart:convert';
 
 class AuthorizationScreen extends StatelessWidget {

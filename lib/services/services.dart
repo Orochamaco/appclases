@@ -3,8 +3,8 @@ import 'dart:convert';
 import 'package:appclases/exception/exception.dart';
 import 'package:appclases/models/curses.dart';
 import 'package:dio/dio.dart';
-import 'package:http/http.dart' as http;
-import 'package:flutter/material.dart';
+//import 'package:http/http.dart' as http;
+//import 'package:flutter/material.dart';
 
 class CoursesService {
   static const String _host = "https://api.sebastian.cl";

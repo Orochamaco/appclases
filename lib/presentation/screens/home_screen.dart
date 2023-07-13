@@ -1,13 +1,13 @@
-import 'dart:developer';
-import 'package:appclases/models/curses.dart';
-import 'package:appclases/presentation/screens/nota.dart';
+//import 'dart:developer';
+//import 'package:appclases/models/curses.dart';
+//import 'package:appclases/presentation/screens/nota.dart';
 import 'package:appclases/presentation/screens/screens.dart';
-import 'package:appclases/providers/jwt_provider.dart';
+//import 'package:appclases/providers/jwt_provider.dart';
 import 'package:appclases/services/services.dart';
 import 'package:appclases/services/voter.dart';
 import 'package:flutter/material.dart';
-import 'package:provider/provider.dart';
-import 'package:dio/dio.dart';
+//import 'package:provider/provider.dart';
+//import 'package:dio/dio.dart';
 import 'dart:core';
 
 
