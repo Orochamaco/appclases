@@ -19,9 +19,30 @@ class IntegrantScreen extends StatelessWidget {
               child: Icon(Icons.person_outline_rounded, size: 50.0,),
             ),
             ListTile(
-              title: Text('Nombre integrante'),
-              subtitle: Text('Correo'),
+              title: Text('Brian Ponce Cruz'),
+              subtitle: Text('bponce@utem.cl'),
             ),
+            Divider(),
+            Container(
+              height: 100.0,
+              alignment: Alignment.center,
+              child: Icon(Icons.person_outline_rounded, size: 50.0,),
+            ),
+            ListTile(
+              title: Text('Jean Pierre Agurto Navarrete'),
+              subtitle: Text('jean.agurton@utem.cl'),
+            ),
+            Divider(),
+            Container(
+              height: 100.0,
+              alignment: Alignment.center,
+              child: Icon(Icons.person_outline_rounded, size: 50.0,),
+            ),
+            ListTile(
+              title: Text('Pablo Vásquez Lara'),
+              subtitle: Text('pvasquez@utem.cl'),
+            ),
+            Divider(),
           ],
       
         ),

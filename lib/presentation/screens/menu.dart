@@ -27,9 +27,15 @@ class MenuApp extends StatelessWidget {
           ),
           Divider(),
           ListTile(
-            leading: Icon(Icons.logout),
-            title: Text('LogOut'),
+            leading: Icon(Icons.rate_review),
+            title: Text('Votación'),
             onTap: () => Navigator.pushNamed(context, VoteScreen.routeName),
+        
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.logout_rounded),
+            title: Text('LogOut'),
         
           ),
         ],
